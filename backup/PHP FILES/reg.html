@@ -1,0 +1,44 @@
+<?php
+	$username = "root";
+	$password = "test123";
+	$hostname = "localhost";
+	
+	$dbhandle = mysql_connect($hostname, $username, $password) or die("Could not connect to database");
+	
+	$selected = mysql_select_db("vehicle", $dbhandle);
+
+		if(isset($_POST['user']) && isset($_POST['pid'])){
+			$user = $_POST['user'];
+			$pid = $_POST['pid'];
+			$pass = $_POST['pass'];
+			$eid = $_POST['eid'];
+
+			$query = mysql_query("SELECT * FROM users WHERE Productid='$myproductid'");
+			if(mysql_num_rows($query) > 0 ) { //check if there is already an entry for that username
+				
+				echo("User Already Registered");
+				
+			}else{
+				mysql_query("INSERT INTO login (user,password) VALUES ('$username','$UPassword')");
+				
+			}
+	}
+	mysql_close();
+?>
+
+
+
+
+
+<html>
+<link rel="stylesheet" href="regg.css">
+<div class='login'>
+  <h2>REGISTRATION</h2>
+  <input name='username' placeholder='Number Plate' type='text'>
+  
+  <input name='UPassword' placeholder='UserPassword' type='password'>
+<input id='pw' name='password' placeholder='Official Password' type='password'>
+  <input class='animated' type='submit' value='Register'>
+  <a class='forgot' href='#'>Already have an account?</a>
+</div>
+</html>
