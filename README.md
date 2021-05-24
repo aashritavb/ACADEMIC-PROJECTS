@@ -1,4 +1,3 @@
-# ACADEMIC-PROJECTS
+Academic Project
 
-AN IOT PROJECT !!
-TITTLE: "SMART VEHICULAR CONTROL"
+A Project based on Internet Of Things - Smart Vehicular Control
